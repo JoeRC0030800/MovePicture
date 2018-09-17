@@ -26,7 +26,9 @@ namespace MovePicture
         {
             if (pictureBox1.Location.X + 10<ClientRectangle.Width - pictureBox1.Width)
             {
-                pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y);
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+                
+                
             }
         }
 
@@ -60,30 +62,35 @@ namespace MovePicture
         //moves diagonal downwards to the left
         private void button5_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y + 5);
+            {
+                if (pictureBox1.Location.X > 0 && pictureBox1.Location.X + 5 < ClientRectangle.Height - pictureBox1.Height) 
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y + 5);
+            }
         }
         //moves downwards diagonal to the right
         private void button6_Click(object sender, EventArgs e)
         {
-            
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y + 5);
-
-                
+            if (pictureBox1.Location.X > 0 && pictureBox1.Location.Y + 5 < ClientRectangle.Height - pictureBox1.Height)
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y + 5);
         }
         //moves upwards diagonal to the left
         private void button7_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y - 5);
+            {
+                if (pictureBox1.Location.Y > 0 && pictureBox1.Location.Y + 5 < ClientRectangle.Height - pictureBox1.Height)
+                    pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y - 5);
+            }
         }
         //moves diagonal upwards to the right
         private void button8_Click(object sender, EventArgs e)
         {
+            if (pictureBox1.Location.Y > 0 && pictureBox1.Location.Y - 5 < ClientRectangle.Height - pictureBox1.Height) 
             pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y - 5);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
