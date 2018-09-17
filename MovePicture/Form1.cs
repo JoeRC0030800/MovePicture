@@ -93,12 +93,12 @@ namespace MovePicture
  
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private async void button9_Click(object sender, EventArgs e)
         {
             pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
-            Task.Delay(500);
-            pictureBox1.Location = new Point(pictureBox1.Location.X _5, pictureBox1.Location.Y);
-            Task.Delay(500);
+            await Task.Delay(500);
+            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+            await Task.Delay(500);
                
         }
     }
